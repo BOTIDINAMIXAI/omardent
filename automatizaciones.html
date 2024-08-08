@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatizaciones - CLÍNICA VIRTUAL OMARDENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://studio.d-id.com/favicon/favicon-192x192.png">
+</head>
+<body>
+    <div id="navbar" class="navbar fixed-navbar">
+        <button onclick="location.href='/'">Inicio</button>
+        <button onclick="location.href='/chat'">Chat</button>
+        <button onclick="location.href='/tratamientos'">Tratamientos</button>
+        <button onclick="location.href='/reservas'">Reservas</button>
+        <button onclick="location.href='/insumos'">Insumos</button>
+        <button onclick="location.href='/laboratorio'">Laboratorio</button>
+        <button onclick="location.href='/automatizaciones'">Automatizaciones</button>
+    </div>
+    <div id="content" class="gradient-background">
+        <div class="section">
+            <h3>Recordatorios Automáticos</h3>
+            <input type="file" id="pdf-upload">
+            <input type="number" id="intervalo" placeholder="Intervalo en minutos">
+            <button id="start-reminders">Iniciar Recordatorios</button>
+            <button id="stop-reminders">Detener Recordatorios</button>
+            <div id="countdown"></div>
+            <div id="responseArea"></div>
+        </div>
+        <div class="section">
+            <h3>Investigación Automática</h3>
+            <input type="url" id="url-input" placeholder="Ingrese URL">
+            <input type="file" id="pdf-upload-research">
+            <input type="number" id="intervalo-research" placeholder="Intervalo en minutos">
+            <button id="start-research">Iniciar Investigación</button>
+            <button id="stop-research">Detener Investigación</button>
+            <div id="researchArea"></div>
+        </div>
+        <div class="section">
+            <h3>Asistente de Voz</h3>
+            <textarea id="chat-area" rows="5" cols="40" placeholder="Pregunta"></textarea>
+            <select id="rol-select">
+                <option value="recordatorios">Recordatorios Automáticos</option>
+                <option value="investigacion">Investigación Automática</option>
+            </select>
+            <button type="button" id="send-question">Enviar Pregunta</button>
+            <audio id="audio-element" controls style="display:none;"></audio>
+            <div id="response-area"></div>
+        </div>
+        <div id="video-wrapper">
+            <video id="video-element" width="400" height="400" muted autoplay>
+                <source src="../videos/galatea.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/automatizaciones.js"></script>
+</body>
+</html>
+
+

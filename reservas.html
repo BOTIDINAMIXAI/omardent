@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - CLÍNICA VIRTUAL OMARDENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://studio.d-id.com/favicon/favicon-192x192.png">
+</head>
+<body>
+    <div id="navbar" class="navbar fixed-navbar">
+        <button onclick="location.href='/chat'">Chat</button>
+        <button onclick="location.href='/pedidos'">Tratamientos</button>
+        <button onclick="location.href='/reservas'">Reservas</button>
+        <button onclick="location.href='/trabajos'">Trabajos</button>
+        <button onclick="location.href='/insumos'">Insumos</button>
+    </div>
+    <div id="content" class="gradient-background">
+        <div class="container">
+            <h1>Gestión de Reservas</h1>
+            <form id="datos-paciente-form">
+                <input type="text" id="name" placeholder="Nombre" required>
+                <input type="text" id="phone" placeholder="Teléfono" required>
+                <input type="text" id="doctor" placeholder="Doctor" required>
+                <textarea id="reason" placeholder="Motivo de la reserva" required></textarea>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" required>
+                <label for="hora">Hora:</label>
+                <select id="hora" required>
+                    <!-- Opciones de horario -->
+                </select>
+                <button type="button" id="submit-reservation">Reservar</button>
+                <button type="button" id="verificar-disponibilidad">Verificar Disponibilidad</button>
+            </form>
+            <h2>Reservas Registradas:</h2>
+            <table id="reservations-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Motivo</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id="generate-pdf" type="button">Generar PDF</button>
+            <button id="view-reservations" type="button">Ver Reservas</button>
+            <button id="clear-reservations" type="button">Borrar Reservas</button>
+            <button id="export-csv" type="button">Exportar a CSV</button>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="file-input" name="file" accept=".txt,.pdf">
+                <button type="submit">Upload</button>
+            </form>
+            <input type="url" id="url-input" placeholder="Ingrese URL">
+            <button id="upload-url-button" type="button">Cargar URL</button>
+            <div>
+                <select id="rol-select">
+                    <option value="asignacion-citas">Asignación de Citas</option>
+                    <option value="otros">Otros</option>
+                </select>
+                <textarea id="textArea" rows="5" cols="40" placeholder="Ingrese su pregunta"></textarea>
+                <button id="start-button" type="button">Enviar Pregunta</button>
+            </div>
+            <div id="responseArea"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/reservas.js"></script>
+</body>
+</html>

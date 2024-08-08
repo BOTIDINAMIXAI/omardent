@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat con GPT-4 y Captura de Voz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="icon" type="image/png" sizes="200x200" href="https://project-files.picsart.com/project_files/4d08e356-66e0-407e-8bfe-30f47c34c90f.png?type=webp&to=min&r=202">
+</head>
+<body>
+  <div id="navbar" class="navbar fixed-navbar">
+    <button onclick="location.href='/chat'">Chat</button>
+    <button onclick="location.href='/tratamientos'">Tratamientos</button>
+    <button onclick="location.href='/reservas'">Reservas</button>
+    <button onclick="location.href='/trabajos'">Trabajos</button>
+    <button onclick="location.href='/insumos'">Insumos</button>
+    <button onclick="location.href='/automatizaciones'">Automatizaciones</button>
+  </div>
+  <div id="content" class="gradient-background">
+    <div id="video-wrapper">
+      <video id="video-element" width="1000" height="1000" muted>
+        <source src="videos/galatea.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="chat">
+      <h3>Escribe aquí:</h3>
+      <textarea id="textArea" cols="50" rows="5" maxlength="280"></textarea>
+      <br>
+      <div class="controls">
+        <button id="start-button" type="button">Enviar</button>
+        <button id="start-voice-button" type="button">Hablar</button>
+      </div>
+      <img src="imagenes/logo.jpg" alt="Logo" id="logo">
+      <div id="msgHistory"></div>
+      <h3>Subir documento:</h3>
+      <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" id="file-input" name="file" accept=".txt,.pdf,.docx" />
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="./scripts/chat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

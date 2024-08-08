@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLÍNICA VIRTUAL OMARDENT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body class="index-body">
+  <div id="navbar" class="navbar fixed-navbar">
+    <button onclick="location.href='/chat'">Chat</button>
+    <button onclick="location.href='/tratamientos'">Tratamientos</button>
+    <button onclick="location.href='/reservas'">reservas</button>
+    <button onclick="location.href='/laboratorio'">Laboratorio</button>
+    <button onclick="location.href='/insumos'">Insumos</button>
+    <button onclick="location.href='/automatizaciones'">Automatizaciones</button>
+  </div>
+  <div class="container gradient-background">
+    <img src="imagenes/omardent.jpg" alt="Logo Clínica Omardent" id="logo">
+    <h1 class="kalnia-glaze-title">CLÍNICA ODONTOLÓGICA OMARDENT </h1>
+    <h2 class="subtitle">¡Odontología de calidad al alcance de todos!</h2>
+    <button onclick="location.href='/chat'" class="ingresar-button">INGRESAR</button>
+    <video id="publicidad-video" autoplay muted>
+      <source src="videos/publicidad.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  <div class="model-selection gradient-background">
+    <h2>Selecciona el modelo de lenguaje</h2>
+    <select id="modelSelect">
+        <option value="gpt-4">GPT-4</option>
+        <option value="gpt-4-turbo">GPT-4 Turbo</option>
+        <option value="gpt-4o">GPT-4o</option>
+        <option value="gpt-4o-mini">GPT-4o Mini</option>
+        <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+    </select>
+    <button onclick="location.href='/chat'" class="ingresar-button">Usar Modelo Seleccionado</button>
+  </div>
+  
+  <script src="./scripts/index.js"></script>
+</body>
+</html>

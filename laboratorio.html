@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio - CLÍNICA VIRTUAL OMARDENT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div id="navbar" class="navbar fixed-navbar">
+    <button onclick="location.href='/'">Inicio</button>
+    <button onclick="location.href='/chat'">Chat</button>
+    <button onclick="location.href='/tratamientos'">Tratamientos</button>
+    <button onclick="location.href='/reservas'">Reservas</button>
+    <button onclick="location.href='/insumos'">Insumos</button>
+    <button onclick="location.href='/laboratorio'">Laboratorio</button>
+  </div>
+  <div id="content" class="gradient-background">
+    <div class="container">
+      <h1>Gestión de Trabajos de Laboratorio</h1>
+      <form id="trabajos-form">
+        <input type="text" id="tipo_trabajo" placeholder="Tipo de Trabajo" required>
+        <input type="text" id="doctor" placeholder="Doctor" required>
+        <label for="fecha_entrega">Fecha de Entrega:</label>
+        <input type="date" id="fecha_entrega" required>
+        <label for="fecha_envio">Fecha de Envío:</label>
+        <input type="date" id="fecha_envio" required>
+        <input type="text" id="laboratorio" placeholder="Laboratorio" required>
+        <input type="text" id="nombre_paciente" placeholder="Nombre del Paciente" required>
+        <input type="text" id="observaciones" placeholder="Observaciones">
+        <input type="text" id="numero_orden" placeholder="Número de Orden" required>
+        <input type="number" id="cantidad" min="1" placeholder="Cantidad" required>
+        <button type="button" id="registrar-trabajo">Registrar Trabajo</button>
+      </form>
+      <h2>Asistente de Voz</h2>
+      <textarea id="chat-area" rows="5" cols="40" placeholder="Pregunta"></textarea>
+      <select id="rol-select">
+        <option value="gestion de trabajos">Gestión de Trabajos de Laboratorio</option>
+      </select>
+      <button type="button" id="send-question">Enviar Pregunta</button>
+      <audio id="audio-element" controls style="display:none;"></audio>
+      <div id="response-area"></div>
+      <button type="button" id="agregar-respuesta-trabajo">Agregar Respuesta como Trabajo</button>
+      <ul id="trabajos-list"></ul>
+      <div id="total">Total de Trabajos: 0</div>
+      <button type="button" id="generar-pdf">Generar PDF</button>
+      <h2>Subir Archivo</h2>
+      <form id="upload-form">
+        <input type="file" id="file-input" name="file" accept=".txt, .pdf, .docx" required>
+        <button type="submit">Subir Archivo</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+  <script src="scripts/laboratorio.js"></script>
+</body>
+</html>

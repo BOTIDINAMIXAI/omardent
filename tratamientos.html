@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tratamientos - CLÍNICA VIRTUAL OMARDENT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div id="navbar" class="navbar fixed-navbar">
+    <button onclick="location.href='/'">Inicio</button>
+    <button onclick="location.href='/chat'">Chat</button>
+    <button onclick="location.href='/tratamientos'">Tratamientos</button>
+    <button onclick="location.href='/reservas'">Reservas</button>
+    <button onclick="location.href='/insumos'">Insumos</button>
+  </div>
+  <div id="content" class="gradient-background">
+    <div class="container">
+      <h1>Generar Presupuesto</h1>
+      <form id="datos-paciente-form">
+        <input type="text" id="nombre" placeholder="Nombre del Paciente" required>
+        <input type="text" id="doctor" placeholder="Doctor" required>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" required>
+        <label for="servicio">Servicio:</label>
+        <select id="servicio">
+          <option value="">Seleccionar Servicio</option>
+          <!-- Agregar todas las opciones de servicios -->
+          <option value="Restauraciones en resina de una superficie - 75.000">Restauraciones en resina de una superficie - $75.000</option>
+          <option value="Restauraciones en resina de dos superficies - 95.000">Restauraciones en resina de dos superficies - $95.000</option>
+          <option value="Restauraciones en resina de tres o más superficies - 120.000">Restauraciones en resina de tres o más superficies - $120.000</option>
+          <option value="Restauración en resina cervical - 60.000">Restauración en resina cervical - $60.000</option>
+          <option value="Coronas metal-porcelana - 750.000">Coronas metal-porcelana - $750.000</option>
+          <option value="Provisional - 80.000">Provisional - $80.000</option>
+          <option value="Profilaxis simple - 75.000">Profilaxis simple - $75.000</option>
+          <option value="Profilaxis completa - 90.000">Profilaxis completa - $90.000</option>
+          <option value="Corona en zirconio - 980.000">Corona en zirconio - $980.000</option>
+          <option value="Blanqueamiento dental láser por sesión - 150.000">Blanqueamiento dental láser por sesión - $150.000</option>
+          <option value="Blanqueamiento dental casero - 330.000">Blanqueamiento dental casero - $330.000</option>
+          <option value="Blanqueamiento mixto - 430.000">Blanqueamiento mixto - $430.000</option>
+          <option value="Prótesis parcial acrílico hasta 6 dientes - 530.000">Prótesis parcial acrílico hasta 6 dientes - $530.000</option>
+          <option value="Prótesis parcial acrílico de más de 6 dientes - 580.000">Prótesis parcial acrílico de más de 6 dientes - $580.000</option>
+          <option value="Prótesis flexible hasta 6 dientes - 800.000">Prótesis flexible hasta 6 dientes - $800.000</option>
+          <option value="Prótesis flexible de más de 6 dientes - 900.000">Prótesis flexible de más de 6 dientes - $900.000</option>
+          <option value="Prótesis total de alto impacto - 650.000">Prótesis total de alto impacto - $650.000</option>
+          <option value="Acker flexible hasta 2 dientes - 480.000">Acker flexible hasta 2 dientes - $480.000</option>
+          <option value="Exodoncia por diente - 85.000">Exodoncia por diente - $85.000</option>
+          <option value="Exodoncia cordal - 130.000">Exodoncia cordal - $130.000</option>
+          <option value="Endodoncia con dientes terminados en 6 - 580.000">Endodoncia con dientes terminados en 6 - $580.000</option>
+          <option value="Endodoncia de un conducto - 380.000">Endodoncia de un conducto - $380.000</option>
+          <option value="Endodoncia de premolares superiores - 480.000">Endodoncia de premolares superiores - $480.000</option>
+          <option value="Recorte endodóntico - 120.000">Recorte endodóntico - $120.000</option>
+          <option value="Retratamiento endodontico un conducto - 370.000">Retratamiento endodontico un conducto - $370.000</option>
+          <option value="Retratamiento endodontico dos conductos - 410.000">Retratamiento endodontico dos conductos - $410.000</option>
+          <option value="Retratamiento endodontico tres conductos - 470.000">Retratamiento endodontico tres conductos - $470.000</option>
+          <option value="Perno colado - 280.000">Perno colado - $280.000</option>
+          <option value="Cementación con ionómero - 80.000">Cementación con ionómero - $80.000</option>
+          <option value="Cementación con fosfato - 60.000">Cementación con fosfato - $60.000</option>
+          <option value="Retiro de brackets - 90.000">Retiro de brackets - $90.000</option>
+          <option value="Placa de bruxismo - 200.000">Placa de bruxismo - $200.000</option>
+          <option value="Placa de bruxismo activada acrílico - 280.000">Placa de bruxismo activada acrílico - $280.000</option>
+          <option value="Incrustación cerámica Disilicato - 690.000">Incrustación cerámica Disilicato - $690.000</option>
+          <option value="Implante dental cirugía - 1.850.000">Implante dental cirugía - $1.850.000</option>
+          <option value="Rehabilitación corona de implante - 1.850.000">Rehabilitación corona de implante - $1.850.000</option>
+          <option value="Mock up diagnostico - 100.000">Mock up diagnostico - $100.000</option>
+        </select>
+        <button type="button" id="agregar-servicio">Agregar Servicio</button>
+      </form>
+      <h2>Servicios Seleccionados:</h2>
+      <ul id="lista-servicios"></ul>
+      <button id="copiar-servicios" type="button">Copiar Servicios al Chat</button>
+      <textarea id="textArea" rows="5" cols="40" placeholder="Ingrese las instrucciones para el presupuesto"></textarea>
+      <h2>Seleccionar Rol del Asistente:</h2>
+      <select id="rol-asistente">
+        <option value="general">General</option>
+        <option value="presupuesto">Presupuesto</option>
+        <option value="calculos">Cálculos</option>
+      </select>
+      <button id="start-button" type="button">Generar Presupuesto</button>
+      <div id="responseArea"></div>
+      <button id="generar-pdf" type="button">Generar PDF del Presupuesto</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="scripts/tratamientos.js"></script>
+</body>
+</html>

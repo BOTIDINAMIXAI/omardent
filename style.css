@@ -1,0 +1,157 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap');
+
+.kalnia-glaze-title {
+  font-family: 'Kalnia Glaze', serif;
+  font-weight: 700;
+  font-size: 54px;
+}
+
+
+
+body {
+  font-family: 'Mulish', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(11,11,11);
+  background: -moz-linear-gradient(83deg, rgba(11,11,11,1) 0%, rgba(23,116,93,1) 48%, rgba(37,173,172,1) 92%);
+  background: -webkit-linear-gradient(83deg, rgba(11,11,11,1) 0%, rgba(23,116,93,1) 48%, rgba(37,173,172,1) 92%);
+  background: linear-gradient(83deg, rgba(11,11,11,1) 0%, rgba(23,116,93,1) 48%, rgba(37,173,172,1) 92%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b0b0b",endColorstr="#25adac",GradientType=1);
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#video-wrapper {
+  margin-right: 20px;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 400px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  background-color: rgb(22, 139, 223);
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: gold;
+  color: white;
+}
+
+button:active {
+  background-color: darkgoldenrod;
+  color: white;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+h3, h4 {
+  margin-bottom: 10px;
+}
+
+#msgHistory {
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  max-width: 50px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.navbar {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Hacer el fondo de la barra de navegación semitransparente */
+  padding: 10px 0;
+  z-index: 1000; 
+}
+
+.navbar button {
+  background-color: black;
+  color: white;
+  border: 2px solid gold;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar button:hover {
+  background-color: gold;
+  color: black;
+}
+
+#resultado-presupuesto {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #e2e908;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 100%;
+}

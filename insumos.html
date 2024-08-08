@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insumos - CLÍNICA VIRTUAL OMARDENT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div id="navbar" class="navbar">
+    <button onclick="location.href='/chat'">Chat</button>
+    <button onclick="location.href='/pedidos'">Tratamientos</button>
+    <button onclick="location.href='/reservas'">Reservas</button>
+    <button onclick="location.href='/trabajos'">Trabajos</button>
+    <button onclick="location.href='/insumos'">Insumos</button>
+  </div>
+  <div id="content">
+    <div class="container">
+      <h1>Gestión de Insumos</h1>
+      <form id="insumos-form">
+        <input type="text" id="insumo_nombre" placeholder="Nombre del Insumo" required>
+        <input type="number" id="insumo_cantidad" min="0" placeholder="Cantidad Faltante" required>
+        <label for="fecha_pedido">Fecha de Pedido:</label>
+        <input type="date" id="fecha_pedido" required>
+        <label for="fecha_necesidad">Fecha de Necesidad:</label>
+        <input type="date" id="fecha_necesidad" required>
+        <input type="checkbox" id="necesidad_urgente"> Necesidad Urgente
+        <input type="text" id="doctor" placeholder="Doctor" required>
+        <input type="text" id="marca" placeholder="Marca" required>
+        <button type="button" id="agregar-insumo">Agregar Insumo</button>
+      </form>
+      <h2>Asistente de Voz</h2>
+      <textarea id="chat-area" rows="5" cols="40" placeholder="Pregunta"></textarea>
+      <select id="rol-select">
+        <option value="gestion de insumos">Gestión de Insumos Odontológicos</option>
+      </select>
+      <button type="button" id="send-question">Enviar Pregunta</button>
+      <audio id="audio-element" controls style="display:none;"></audio>
+      <div id="response-area"></div>
+      <button type="button" id="agregar-respuesta-insumo">Agregar Respuesta como Insumo</button>
+      <ul id="insumos-list"></ul>
+      <div id="total">Total de Insumos: 0</div>
+      <button type="button" id="generar-pdf">Generar PDF</button>
+      <h2>Subir Archivo</h2>
+      <form id="upload-form">
+        <input type="file" id="file-input" name="file" accept=".txt, .pdf, .docx" required>
+        <button type="submit">Subir Archivo</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+  <script src="scripts/insumos.js"></script>
+</body>
+</html>
